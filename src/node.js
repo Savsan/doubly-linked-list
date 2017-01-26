@@ -3,6 +3,7 @@ class Node {
         this.data = data;
         this.prev = prev;
         this.next = next;
+        this.index = 0;
     }
 }
 
