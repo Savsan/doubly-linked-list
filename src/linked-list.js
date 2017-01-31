@@ -7,16 +7,14 @@ class LinkedList {
 
     append(data) {
         var newNode = new Node(data);
-        var tail = this._head;
+        var tail = this._tail;
         if(this.isEmpty()){
             this._head = newNode;
             this._tail = newNode;
             this.length++;
             return this;
         }
-        while(tail.next != null){
-            tail = tail.next;
-        }
+
         newNode.index = tail.index + 1;
         tail.next = newNode;
         tail.next.prev = tail;
