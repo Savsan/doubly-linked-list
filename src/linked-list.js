@@ -77,14 +77,9 @@ class LinkedList {
     }
 
     clear() {
-        if(!this.isEmpty()){
-            this._head.data = null;
-            this._head.next = null;
-            this._tail.prev = null;
-            this._tail.data = null;
-            this._tail.index = 0;
-            this.length = 0;
-        }
+        this._head = null;
+        this._tail = null;
+        this.length = 0;
         return this;
     }
 
