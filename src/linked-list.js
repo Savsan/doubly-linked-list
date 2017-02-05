@@ -43,11 +43,29 @@ class LinkedList {
     }
 
     insertAt(index, data) {
+        // Create new node
+        var newNode = new Node(data);
         // Call shortSearch method to get node by shorter way
         var node = this.shortSearch(index);
-        // Write data if node not null
+        // Insert new node if passed index exist.
         if(node != null){
-            node.data = data;
+            if(node === this._head){
+                newNode.next = node;
+                node.prev = newNode;
+                this._head = newNode;
+            }else{
+                newNode.next = node;
+                newNode.index = node.index;
+                newNode.prev = node.prev;
+                node.prev.next = newNode;
+                node.prev = newNode;
+            }
+            // Rewrite indexes of list to keep it in correct state
+            while(node != null){
+                node.index++;
+                node = node.next;
+            }
+            this.length++;
         }
         return this;
     }
