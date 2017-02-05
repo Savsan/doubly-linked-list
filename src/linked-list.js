@@ -26,7 +26,7 @@ class LinkedList {
     }
 
     head() {
-        return this._head.data;
+        return this._head === null ? this._head : this._head.data;
     }
 
     tail() {
