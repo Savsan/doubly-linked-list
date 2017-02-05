@@ -30,7 +30,7 @@ class LinkedList {
     }
 
     tail() {
-        return this._tail.data;
+        return this._tail === null ? this._tail : this._tail.data;
     }
 
     at(index) {
